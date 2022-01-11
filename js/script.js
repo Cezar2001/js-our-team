@@ -33,20 +33,42 @@ const team = [
 
 const teamContainer = document.querySelector('.team-container'); 
 
-for (let i = 0; i < team.length; i++) {
-  const member = team[i];
+function teamMember(teamContainer, team) {
 
-teamContainer.innerHTML += 
-`<div class="team-card">
-<div class="card-image">
-  <img
-    src="img/${member.image}"
-    alt="${member.name}"
-  />
-</div>
-<div class="card-text">
-  <h3>${member.name}</h3>
-  <p>${member.role}</p>
-</div>
-</div>`
-} 
+  teamContainer.innerHTML = ''
+
+  for (let i = 0; i < team.length; i++) {
+    const member = team[i];
+  
+    teamContainer.innerHTML += 
+    `<div class="team-card">
+    <div class="card-image">
+      <img
+        src="img/${member.image}"
+        alt="${member.name}"
+      />
+    </div>
+    <div class="card-text">
+      <h3>${member.name}</h3>
+      <p>${member.role}</p>
+    </div>
+    </div>`
+  } 
+}
+
+
+const button = document.getElementById('addMemberButton');
+button.addEventListener('click', function() {
+  const addName = document.getElementById('name').value;
+  const addRole = document.getElementById('role').value;
+  const addImage = document.getElementById('image').value;
+
+  const newMember = {
+    name: addName,
+    role: addRole,
+    image: addImage,
+  }
+
+  team.push(newMember);
+  teamMember(teamContainer, team)
+})
