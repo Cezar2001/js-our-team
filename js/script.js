@@ -41,7 +41,7 @@ teamContainer.innerHTML +=
 <div class="card-image">
   <img
     src="img/${member.image}"
-    alt="Wayne Barnett"
+    alt="${member.name}"
   />
 </div>
 <div class="card-text">
@@ -49,13 +49,4 @@ teamContainer.innerHTML +=
   <p>${member.role}</p>
 </div>
 </div>`
-
-  // for (let key in member) {
-  //   const teamCardImage = `${key} => ${member[key]}`
-  //   teamCardHtml.innerHTML += teamCardImage + '<br/>'
-  // }
 } 
-
-// teamCardHtml.innerHTML += 'nome' + team.nome + '<br/>';
-// teamCardHtml.innerHTML += 'role' + team.role + '<br/>';
-// teamCardHtml.innerHTML += 'image' + team.image + '<br/>';
